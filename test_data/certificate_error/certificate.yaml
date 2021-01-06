@@ -1,0 +1,27 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  labels:
+    gitops.jenkins-x.io/pipeline: namespaces
+    jenkins.io/letsencrypt-service: production
+  name: tls-dev-jenkins-x-me-p
+  namespace: jx
+spec:
+  commonName: '*.dev.jenkins-x.me'
+  dnsNames:
+    - '*.dev.jenkins-x.me'
+    - dev.jenkins-x.me
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-prod
+  secretName: tls-dev-jenkins-x-me-p
+status:
+  conditions:
+    - lastTransitionTime: "2020-11-23T20:04:12Z"
+      message: A bad thing happened
+      reason: Ready
+      status: "False"
+      type: Ready
+  notAfter: "2021-02-16T23:39:03Z"
+  notBefore: "2020-11-18T23:39:03Z"
+  renewalTime: "2021-01-17T23:39:03Z"

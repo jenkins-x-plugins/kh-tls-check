@@ -1,0 +1,35 @@
+apiVersion: acme.cert-manager.io/v1
+kind: Challenge
+metadata:
+  finalizers:
+    - finalizer.acme.cert-manager.io
+  name: tls-pr-1956-2-gke-tls-jenkinsxlabs-com-s-wbnsn-45873-738572391
+  namespace: jx
+  ownerReferences:
+    - apiVersion: acme.cert-manager.io/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Order
+      name: tls-pr-1956-2-gke-tls-jenkinsxlabs-com-s-wbnsn-458730623
+spec:
+  authorizationURL: https://acme-staging-v02.api.letsencrypt.org/acme/authz-v3/186015640
+  dnsName: pr-1956-2-gke-tls.jenkinsxlabs.com
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-staging
+  solver:
+    dns01:
+      cloudDNS:
+        project: jenkins-x-labs-bdd
+    selector:
+      dnsNames:
+        - '*.pr-1956-2-gke-tls.jenkinsxlabs.com'
+        - pr-1956-2-gke-tls.jenkinsxlabs.com
+  type: DNS-01
+  url: https://acme-staging-v02.api.letsencrypt.org/acme/chall-v3/foo
+  wildcard: false
+status:
+  presented: true
+  processing: true
+  reason: 'Waiting for DNS-01 challenge propagation: DNS record for "pr-1956-2-gke-tls.jenkinsxlabs.com" not yet propagated'
+  state: pending

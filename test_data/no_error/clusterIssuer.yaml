@@ -1,0 +1,30 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  labels:
+    gitops.jenkins-x.io/pipeline: cluster
+  name: letsencrypt-staging
+spec:
+  acme:
+    email: jenkins-x-admin@googlegroups.com
+    privateKeySecretRef:
+      name: letsencrypt-staging
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    solvers:
+      - dns01:
+          cloudDNS:
+            project: jenkins-x-labs-bdd
+        selector:
+          dnsNames:
+            - '*.pr-1956-2-gke-tls.jenkinsxlabs.com'
+            - pr-1956-2-gke-tls.jenkinsxlabs.com
+status:
+  acme:
+    lastRegisteredEmail: jenkins-x-admin@googlegroups.com
+    uri: https://acme-staging-v02.api.letsencrypt.org/acme/acct/17407056
+  conditions:
+    - lastTransitionTime: "2021-01-06T15:48:42Z"
+      message: The ACME account was registered with the ACME server
+      reason: ACMEAccountRegistered
+      status: "True"
+      type: Ready
