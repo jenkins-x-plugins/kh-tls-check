@@ -1,4 +1,4 @@
-module github.com/jenkins-x/jx-kh-check/cmd/kh-tls-check
+module github.com/jenkins-x/kh-tls-check
 
 go 1.15
 

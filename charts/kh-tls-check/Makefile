@@ -1,5 +1,5 @@
 CHART_REPO := gs://jenkinsxio/charts
-NAME := jx-kh-check
+NAME := kh-tls-check
 
 build: clean
 	rm -rf Chart.lock
