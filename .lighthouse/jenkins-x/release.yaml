@@ -76,17 +76,17 @@ spec:
             if [ -d "/workspace/source/charts/$REPO_NAME" ]; then source .jx/variables.sh
             cd /workspace/source/charts/$REPO_NAME
             make release; else echo no charts; fi
-        - image: gcr.io/jenkinsxio/step-go-releaser:0.0.14
-          name: upload-binaries
-          resources: {}
-          script: |
-            #!/bin/bash
-            source .jx/variables.sh
-            make goreleaser
-        - command:
-          - jx-updatebot
-          - pr
-          image: gcr.io/jenkinsxio/jx-updatebot:0.0.20
-          name: promote-release
+#        - image: gcr.io/jenkinsxio/step-go-releaser:0.0.14
+#          name: upload-binaries
+#          resources: {}
+#          script: |
+#            #!/bin/bash
+#            source .jx/variables.sh
+#            make goreleaser
+#        - command:
+#          - jx-updatebot
+#          - pr
+#          image: gcr.io/jenkinsxio/jx-updatebot:0.0.20
+#          name: promote-release
   serviceAccountName: tekton-bot
   timeout: 240h0m0s
