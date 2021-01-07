@@ -1,3 +1,3 @@
 FROM scratch
-COPY build/kh-tls-check /
+COPY build/linux/kh-tls-check /
 ENTRYPOINT ["/kh-tls-check"]
