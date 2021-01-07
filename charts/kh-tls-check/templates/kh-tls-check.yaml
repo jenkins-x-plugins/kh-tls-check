@@ -1,7 +1,7 @@
 apiVersion: comcast.github.io/v1
 kind: KuberhealthyCheck
 metadata:
-  name: kh-tls-check
+  name: certmanager-tls
   annotations:
     docs.jenkins-x.io: https://jenkins-x.io/v3/admin/guides/tls_dns/
   {{- if .Values.cluster.enabled }}
