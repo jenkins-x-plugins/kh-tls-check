@@ -1,6 +1,6 @@
 image:
   repository: gcr.io/jenkinsxio/kh-tls-check
-  tag: 0.0.0
+  tag: 0.0.1
 runInterval: 60s # The interval that Kuberhealthy will run your check on
 timeout: 5m # After this much time, Kuberhealthy will kill your check and consider it "failed"
 cluster:
