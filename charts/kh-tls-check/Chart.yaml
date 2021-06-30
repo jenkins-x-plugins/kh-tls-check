@@ -2,11 +2,11 @@ apiVersion: v2
 name: kh-tls-check
 description: Jenkins X next gen cloud CI / CD platform for Kubernetes
 home: https://jenkins-x.io/
-version: 0.0.1
-appVersion: 3.0.0
+version: 0.0.10
+appVersion: 0.0.10
 icon: https://jenkins-x.github.io/jenkins-x-website/img/profile.png
 sources:
-- https://github.com/jenkins-x-plugins/kh-tls-check
+  - https://github.com/jenkins-x-plugins/kh-tls-check
 maintainers:
-- name: Jenkins X Team
-  email: jenkins-x@googlegroups.com
+  - name: Jenkins X Team
+    email: jenkins-x@googlegroups.com
